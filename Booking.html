@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking</title>
+</head>
+<style>
+.box {
+  border: 1px solid;
+  background-color: #86592d;
+  padding: 10px;
+  box-shadow: 5px#888888;
+}
+.boxB {
+  border: 1px solid;
+  background-color: #4d3300;
+  padding: 10px;
+  box-shadow: 5px#888888;
+  border-radius: 30px;
+}
+body {
+  background-image: url('pictures/HomeB.jpg');
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+/* Navbar styles */
+nav {
+    background-color: #000000;
+    padding: 10px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #e69900;
+    font-weight: bold;
+}
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+h1 {
+    color: #3e2723; /* Coffee Brown */
+    text-align: center;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="date"], input[type="time"], input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #e69900;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+nav a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #b32d00;
+}
+</style>
+<body>
+<img src="pictures/Logo.jpg" alt="Bean and Brew Logo" width="200" height="200">
+<nav>
+    <ul>
+        <li style="font-size:30px"><a href="index.html">Home</a></li>
+        <li style="font-size:30px"><a href="About.html">About us</a></li>
+        <li style="font-size:30px"><a href="Menu.html">Menu</a></li>
+        <li style="font-size:30px"><a href="Booking.html" class="active">Booking</a></li>
+        <li style="font-size:30px"><a href="Create.html">Create Account</a></li>
+        <li style="font-size:30px"><a href="Contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div class="box">
+<div class="container">
+    <div class="boxB">
+    <h1 style="font-family: 'Sitika text'; font-size: 20px; color:#e6e6e6;">Book Your Experience</h1>
+    </div>
+    <form action="/submit-booking" method="POST">
+        <label for="type"style="font-size:16.5px">Booking Type:</label>
+        <select id="type" name="booking_type" required>
+            <option value="">-- Select --</option>
+            <option value="restaurant">Restaurant Reservation</option>
+            <option value="baking_lesson">Baking Lesson</option>
+        </select>
+
+        <label for="location"style="font-size:16.5px">Location:</label>
+        <select id="location" name="location" required>
+            <option value="">-- Select --</option>
+            <option value="harrogate">Harrogate</option>
+            <option value="leeds">Leeds</option>
+            <option value="knaresborough">Knaresborough Castle</option>
+        </select>
+
+        <label for="date"style="font-size:16.5px">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time"style="font-size:16.5px">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="guests"style="font-size:16.5px">Number of People/Attendees:</label>
+        <input type="number" id="guests" name="guests" min="1" max="10" required>
+        
+        <label for="name"style="font-size:16.5px">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email"style="font-size:16.5px">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit"style="font-size:16.5px">Confirm Booking</button>
+    </form>
+</div></div>
+</body>
+</html>
